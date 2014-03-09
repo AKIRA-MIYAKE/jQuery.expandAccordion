@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Expanded Accordion</title>
+  
+  <link rel="stylesheet" href="css/jquery.expandAccordion.css" />
+  <link rel="stylesheet" href="css/demo.css" />
+</head>
+<body>
+  
+  <div class="wrapper">
+    
+    <div class="expand_accordion" id="expand_accordion">
+      <div class="header">
+        <div class="inner">
+          <h1>jQuery Expand Accordion</h1>
+        </div>
+      </div><!-- /.header -->
+      
+      <div class="main">
+        <div class="item">
+          <div class="item_header">
+            <div class="inner">
+              <span>How to use</span>
+            </div>
+          </div><!-- /.item_header -->
+          <div class="item_content">
+            <div class="inner">
+<pre>
+<code>
+&lt;div class=&quot;expand_accordion&quot; id=&quot;expand_accordion&quot;&gt;
+      &lt;div class=&quot;header&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;!-- /.header --&gt;
+
+      &lt;div class=&quot;main&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;
+          &lt;div class=&quot;item_header&quot;&gt;
+            &lt;div class=&quot;inner&quot;&gt;
+              &lt;span&gt;How to use&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;&lt;!-- /.item_header --&gt;
+          &lt;div class=&quot;item_content&quot;&gt;
+            &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;&lt;!-- /.item_content --&gt;
+        &lt;/div&gt;&lt;!-- /.item --&gt;
+        
+        &lt;div class=&quot;item&quot;&gt;
+          &lt;div class=&quot;item_header&quot;&gt;
+            &lt;div class=&quot;inner&quot;&gt;
+              &lt;span&gt;How to use&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;&lt;!-- /.item_header --&gt;
+          &lt;div class=&quot;item_content&quot;&gt;
+            &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;&lt;!-- /.item_content --&gt;
+        &lt;/div&gt;&lt;!-- /.item --&gt;
+
+        &lt;div class=&quot;footer&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;!-- /.footer --&gt;
+    &lt;/div&gt;
+      
+&lt;/div&gt;
+
+
+$(&quot;#expand_accordion&quot;).expandAccordion();
+</code>
+</pre>
+            </div>
+          </div><!-- /.item_content -->
+        </div><!-- /.item -->
+        
+        <div class="item">
+          <div class="item_header">
+            <div class="inner">
+              <span>Options</span>
+            </div>
+          </div><!-- /.item_header -->
+          <div class="item_content">
+            <div class="inner">
+<pre>
+<code>
+$(function() {
+  $(&quot;#expand_accordion&quot;).expandAccordion({
+    accordionHeight: 400,
+    itemHeaderHeight: 44,
+    headerHeight: 88,
+    footerHeight: 180
+  });
+});
+
+var defaults = {
+  accordionHeight: 548,
+  itemHeaderHeight: 44,
+  headerHeight: undefined,
+  footerHeight: undefined
+};
+</code>
+</pre>
+            </div>
+          </div><!-- /.item_content -->
+        </div><!-- /.item -->
+        
+        <div class="item" id="item_event">
+          <div class="item_header">
+            <div class="inner">
+              <span>Event</span>
+            </div>
+          </div><!-- /.item_header -->
+          <div class="item_content">
+            <div class="inner">
+<pre>
+<code>
+$('#item_event').on('itemOpened', function() {
+  alert('Item opened!!');
+});
+
+$('#item_event').on('itemClosed', function() {
+  alert('Item closed!!');
+});
+</code>
+</pre>
+            </div>
+          </div><!-- /.item_content -->
+        </div><!-- /.item -->
+      </div><!-- /.main -->
+      
+      <div class="footer">
+        <div class="inner">
+          <a href="http://github.com/AKIRA-MIYAKE/jQuery.expandAccordion"><span>GitHub - jQuery.expandAccordion</span></a>
+        </div>
+      </div><!-- /.footer -->
+    </div>
+      
+  </div>
+  
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/jquery.expandAccordion.js"></script>
+  <script>
+    $(function() {
+      $("#expand_accordion").expandAccordion({
+        accordionHeight: $('.wrapper').height(),
+        headerHeight: 88
+      });
+      
+      $('#item_event').on('itemOpened', function() {
+        alert('Item opened!!');
+      });
+      
+      $('#item_event').on('itemClosed', function() {
+        alert('Item closed!!');
+      });
+    });
+  </script>
+  
+</body>
+</html>

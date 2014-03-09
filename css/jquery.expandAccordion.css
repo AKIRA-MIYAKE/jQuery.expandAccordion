@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/*  jQuery.expandAccordion
+ *  (c) 2014 AKIRA-MIAYEK
+ *
+ *  jQuery.expandAccordion is freely distributable under the terms of an MIT-style license.
+ *
+ *--------------------------------------------------------------------------*/
+
+.expand_accordion {
+  display: block;
+  position: relative;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.expand_accordion > .header,
+.expand_accordion > .main,
+.expand_accordion > .footer {
+  display: block;
+  position: relative;
+  
+  width: 100%;
+}
+
+.expand_accordion > .main > .item {
+  display: block;
+  position: relative;
+  
+  box-sizing: border-box;
+  
+  width: 100%;
+}
+
+.expand_accordion > .main > .item > .item_header,
+.expand_accordion > .main > .item > .item_content {
+  display: block;
+  position: relative;
+  
+  box-sizing: border-box;
+}
+
+.expand_accordion > .main > .item > .item_content > .inner {
+  display: none;
+}
+.expand_accordion.opened > .main > .item > .item_content {
+  overflow: scroll;
+}
+.expand_accordion.opened > .header,
+.expand_accordion.opened > .footer {
+  overflow: hidden;
+}
+
+/** Animation **/
+
+.expand_accordion.opened > .header,
+.expand_accordion.opened > .main,
+.expand_accordion.opened > .footer {
+  -webkit-transition: height 0.5s ease 0;
+  -moz-transition: height 0.5s ease 0;
+  transition: height 0.5s ease 0;
+}
+.expand_accordion.closed > .header,
+.expand_accordion.closed > .main,
+.expand_accordion.closed > .footer {
+  -webkit-transition: height 0.5s ease 0;
+  -moz-transition: height 0.5s ease 0;
+  transition: height 0.5s ease 0;
+}
+.expand_accordion.closed > .main > .item > .item_content,
+.expand_accordion.opened > .main > .item > .item_content,
+.expand_accordion.closed > .main > .item.opened > .item_content,
+.expand_accordion.opened > .main > .item.opened > .item_content {
+  -webkit-transition: height 0.5s ease 0;
+  -moz-transition: height 0.5s ease 0;
+  transition: height 0.5s ease 0;
+}
